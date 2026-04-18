@@ -9,13 +9,15 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}"
 }
+if not GITHUB_TOKEN:
+    print("Warning: No GitHub token found. Rate limits may apply.")
 
 
 def get_top_repos(username):
     url = f"https://api.github.com/users/{username}/repos"
     params = {"sort": "stars", "per_page": 5}
 
-    response = requests.get(url, headers=HEADERS, params=params)
+    response = requests.get(url, headers=HEADERS, timeout=10)
 
     if response.status_code != 200:
         raise Exception(f"Error fetching repos: {response.json()}")
@@ -35,7 +37,7 @@ def get_top_repos(username):
 def get_repo_files(owner, repo, branch):
     url = f"https://api.github.com/repos/{owner}/{repo}/git/trees/{branch}?recursive=1"
 
-    response = requests.get(url, headers=HEADERS)
+    response = requests.get(url, headers=HEADERS, timeout=10)
 
     if response.status_code != 200:
         return []
@@ -53,7 +55,7 @@ def get_repo_files(owner, repo, branch):
 def get_file_content(owner, repo, path):
     url = f"https://api.github.com/repos/{owner}/{repo}/contents/{path}"
 
-    response = requests.get(url, headers=HEADERS)
+    response = requests.get(url, headers=HEADERS, timeout=10)
 
     if response.status_code != 200:
         return None
