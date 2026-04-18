@@ -47,7 +47,7 @@ def get_repo_files(owner, repo, branch):
         if file["path"].endswith((".py", ".js", ".ts")) and file["type"] == "blob"
     ]
 
-    return code_files[:3]
+    return code_files[:2]
 
 
 def get_file_content(owner, repo, path):
@@ -80,7 +80,10 @@ def fetch_github_data(username):
         file_data = []
 
         for file in files:
-            code = get_file_content(owner, repo_name, file["path"])
+            try:
+                code = get_file_content(owner, repo_name, file["path"])
+            except Exception:
+                continue
 
             if code:
                 file_data.append({
