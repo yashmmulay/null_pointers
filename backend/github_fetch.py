@@ -94,6 +94,7 @@ def fetch_github_data(username):
         if file_data:
             result.append({
                 "repo": repo_name,
+                "file_count": len(file_data),
                 "files": file_data
             })
 
