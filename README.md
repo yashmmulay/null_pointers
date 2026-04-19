@@ -12,7 +12,7 @@ devaudit/
 │   ├── main.py            ← FastAPI app  (POST /audit, GET /health)
 │   ├── github_fetch.py    ← GitHub REST API (top repos + code files)
 │   ├── analyzer.py        ← radon + bandit + pylint + JS lint
-│   ├── ai_review.py       ← Groq LLaMA 3 70B integration
+│   ├── ai_review.py       ← Gemini API 1.5 integration
 │   ├── requirements.txt
 │   ├── .env               ← your keys go here (copy of .env.example)
 │   └── .env.example
