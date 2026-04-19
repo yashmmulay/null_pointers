@@ -1,0 +1,165 @@
+/* DevAudit — Global Styles
+   ──────────────────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base resets ────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #07070f;
+  color: #f8fafc;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+code,
+pre,
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ── Custom scrollbar ───────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0f1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #3730a3;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* ── Glassmorphism card ─────────────────────────────────────────────────── */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* ── Animated gradient text ─────────────────────────────────────────────── */
+
+.gradient-text {
+  background: linear-gradient(135deg, #818cf8, #a78bfa, #38bdf8, #818cf8);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 5s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* ── Neon glow utilities ────────────────────────────────────────────────── */
+
+.glow-purple {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.35),
+              0 0 60px rgba(139, 92, 246, 0.15);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.35),
+              0 0 60px rgba(6, 182, 212, 0.15);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.25),
+              0 0 40px rgba(239, 68, 68, 0.1);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.25),
+              0 0 40px rgba(16, 185, 129, 0.1);
+}
+
+.glow-orange {
+  box-shadow: 0 0 30px rgba(251, 146, 60, 0.35),
+              0 0 60px rgba(251, 146, 60, 0.15);
+}
+
+.glow-blue {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.28),
+              0 0 60px rgba(59, 130, 246, 0.12);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.28),
+              0 0 60px rgba(16, 185, 129, 0.12);
+}
+
+.glow-fuchsia {
+  box-shadow: 0 0 30px rgba(217, 70, 239, 0.28),
+              0 0 60px rgba(217, 70, 239, 0.12);
+}
+
+/* ── Grid background pattern ────────────────────────────────────────────── */
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ── Floating orb ───────────────────────────────────────────────────────── */
+
+.orb {
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-20px); }
+}
+
+/* ── Input focus ring ───────────────────────────────────────────────────── */
+
+.neon-input:focus {
+  outline: none;
+  border-color: rgba(139, 92, 246, 0.6);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15),
+              0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+/* ── Timeline connector ─────────────────────────────────────────────────── */
+
+.timeline-line {
+  background: linear-gradient(
+    to bottom,
+    #6366f1,
+    #8b5cf6,
+    #06b6d4,
+    transparent
+  );
+}
