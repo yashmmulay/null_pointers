@@ -47,7 +47,7 @@ devaudit/
 
 | Service | URL | Cost |
 |---------|-----|------|
-| **Groq API** (required) | https://console.groq.com | Free |
+| **Gemini API** (required) | https://aistudio.google.com/api-keys | Free |
 | **GitHub Token** (optional) | https://github.com/settings/tokens | Free |
 
 ### Step 2 — Configure Backend
