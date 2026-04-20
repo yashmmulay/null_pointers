@@ -118,7 +118,7 @@ Returns `{ status: "ok", groq_configured: true, github_token_configured: true }`
 
 1. **Fetch** — Top 5 non-fork repos sorted by stars; top 3 code files per repo
 2. **Analyze** — radon (complexity + maintainability), bandit (security), pylint (lint)  
-3. **AI Review** — All real code + analysis sent to Groq LLaMA 3 70B
+3. **AI Review** — All real code + analysis sent to Gemini API
 4. **Report** — Skill verdict, issues with fixes, resume rewrite, damaging projects, 90-day roadmap
 
 ---
@@ -126,6 +126,6 @@ Returns `{ status: "ok", groq_configured: true, github_token_configured: true }`
 ## Tech Stack
 
 - **Backend**: FastAPI + Python 3.11+
-- **AI**: Groq API (llama3-70b-8192) — free tier
+- **AI**: Gemini API (llama3-70b-8192) — free tier
 - **Static Analysis**: radon, bandit, pylint
 - **Frontend**: React 18 + Vite + Tailwind CSS + Framer Motion
