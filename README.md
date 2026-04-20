@@ -55,7 +55,7 @@ devaudit/
 Open `backend/.env` and add your keys:
 
 ```env
-GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GEMINI_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
